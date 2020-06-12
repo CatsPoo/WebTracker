@@ -28,13 +28,8 @@ def main():
     conn = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3)
 
     while True:
-
-	#if report.current_time != date.today().strftime("%d_%m_%Y"):
-	#	report = Report()
-	#	print ("New Date")
-
         raw_data, addr = conn.recvfrom(65535)
-    #    pcap.write(raw_data)
+        #pcap.write(raw_data)
         eth = Ethernet(raw_data)
 
         print('\nEthernet Frame:')
@@ -75,6 +70,12 @@ def main():
                             http_info = str(http.data).split('\n')
                             for line in http_info:
                                 print(DATA_TAB_3 + str(line))
+
+                                #check if date passes
+                                if report.current_time != date.today().strftime("%d_%m_%Y"):
+                                    #create new report
+		                            report = Report()
+		                            print ("New Date")
                                 # add line to report
 			                    report.add_row(ipv4.src,ipv4.target)
 
@@ -99,7 +100,7 @@ def main():
             print('Ethernet Data:')
             print(format_multi_line(DATA_TAB_1, eth.data))
 
-    #pcap.close()
+        #pcap.close()
 
 
 main()
