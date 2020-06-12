@@ -1,6 +1,6 @@
 import socket
 from general import *
-from datetimt import date
+from datetime import date
 
 from networking.ethernet import Ethernet
 from networking.ipv4 import IPv4
