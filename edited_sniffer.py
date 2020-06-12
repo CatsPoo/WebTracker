@@ -74,10 +74,10 @@ def main():
                                 #check if date passes
                                 if report.current_time != date.today().strftime("%d_%m_%Y"):
                                     #create new report
-		                            report = Report()
-		                            print ("New Date")
+                                    report = Report()
+                                    print ("New Date")
                                 # add line to report
-			                    report.add_row(ipv4.src,ipv4.target)
+                                report.add_row(ipv4.src,ipv4.target)
 
                         except:
                             print(format_multi_line(DATA_TAB_3, tcp.data))
