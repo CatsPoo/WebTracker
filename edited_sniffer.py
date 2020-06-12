@@ -75,7 +75,8 @@ def main():
                             http_info = str(http.data).split('\n')
                             for line in http_info:
                                 print(DATA_TAB_3 + str(line))
-			    report.add_row(ipv4.src,ipv4.target)
+                                # add line to report
+			                    report.add_row(ipv4.src,ipv4.target)
 
                         except:
                             print(format_multi_line(DATA_TAB_3, tcp.data))
