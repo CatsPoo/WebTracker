@@ -30,10 +30,10 @@ def main():
     while True:
 
         #check if date passes
-            if report.current_time != date.today().strftime("%d_%m_%Y"):
-                #create new report
-                report = Report()
-                print ("New Date")
+        if report.current_time != date.today().strftime("%d_%m_%Y"):
+            #create new report
+            report = Report()
+            print ("New Date")
 
         raw_data, addr = conn.recvfrom(65535)
         #pcap.write(raw_data)
