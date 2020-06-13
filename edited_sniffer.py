@@ -95,11 +95,11 @@ def main():
                 #print(TAB_2 + 'Source Port: {}, Destination Port: {}, Length: {}'.format(udp.src_port, udp.dest_port, udp.size))
 
             # Other IPv4
-            else:
+            #else:
                 #print(TAB_1 + 'Other IPv4 Data:')
                 #print(format_multi_line(DATA_TAB_2, ipv4.data))
 
-        else:
+        #else:
             #print('Ethernet Data:')
             #print(format_multi_line(DATA_TAB_1, eth.data))
 
