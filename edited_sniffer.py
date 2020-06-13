@@ -22,7 +22,7 @@ DATA_TAB_2 = '\t\t   '
 DATA_TAB_3 = '\t\t\t   '
 DATA_TAB_4 = '\t\t\t\t   '
 
-resolveName(ip):
+def resolveName(ip):
     data = socket.gethostbyaddr(ip)
     host = repr(data[0])
     return host
