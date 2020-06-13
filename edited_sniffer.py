@@ -22,6 +22,11 @@ DATA_TAB_2 = '\t\t   '
 DATA_TAB_3 = '\t\t\t   '
 DATA_TAB_4 = '\t\t\t\t   '
 
+resolveName(ip):
+    data = socket.gethostbyaddr(ip)
+    host = repr(data[0])
+    return host
+
 
 def main():
     report = Report()
@@ -61,15 +66,23 @@ def main():
 
                                 #print(DATA_TAB_3 + str(line))
 
+                                #resolve ip addresses to hosts
+                                resolvedSrc = resolveName(ipv4.src)
+                                resolvedDest = esolveName(ipv4.target)
+
+                                #print Log
                                 print(DATA_TAB_1 + "Source IP:")
                                 print(DATA_TAB_2 + ipv4.src)
+                                print(DATA_TAB_2 + resolvedSrc)
                                 print(DATA_TAB_1 + "Destination IP:")
                                 print(DATA_TAB_2 + ipv4.target)
+                                print(DATA_TAB_2 + resolvedDest)
 
                                 # add line to report
-                                report.add_row(ipv4.src,ipv4.target)
+                                report.add_row(ipv4.src,resolvedDest)
 
                         except:
                             print(format_multi_line(DATA_TAB_3, tcp.data))
+
 
 main()
