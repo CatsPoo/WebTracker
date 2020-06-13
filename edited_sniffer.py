@@ -67,20 +67,20 @@ def main():
                                 #print(DATA_TAB_3 + str(line))
 
                                 #resolve ip addresses to hosts
-                                resolvedSrc = resolveName(ipv4.src)
-                                resolvedDest = esolveName(ipv4.target)
+                                #resolvedSrc = resolveName(ipv4.src)
+                                #resolvedDest = esolveName(ipv4.target)
 
                                 #print Log
                                 print(DATA_TAB_1 + "Source IP:")
                                 print(DATA_TAB_2 + ipv4.src)
-                                print(DATA_TAB_2 + resolvedSrc)
-                                
+                                #print(DATA_TAB_2 + resolvedSrc)
+
                                 print(DATA_TAB_1 + "Destination IP:")
                                 print(DATA_TAB_2 + ipv4.target)
-                                print(DATA_TAB_2 + resolvedDest)
+                                #print(DATA_TAB_2 + resolvedDest)
 
                                 # add line to report
-                                report.add_row(ipv4.src,resolvedDest)
+                                report.add_row(ipv4.src,ipv4.target)
 
                         except:
                             print(format_multi_line(DATA_TAB_3, tcp.data))
