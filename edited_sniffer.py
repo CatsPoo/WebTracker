@@ -30,7 +30,7 @@ def main():
     while True:
 
         #check if date passes
-        if report.current_time != date.today().strftime("%d_%m_%Y"):
+        if report.current_date != date.today().strftime("%d_%m_%Y"):
             #create new report
             report = Report()
             print ("New Date")
