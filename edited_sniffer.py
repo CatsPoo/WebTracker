@@ -51,7 +51,9 @@ def main():
                     # HTTP
                     if  (tcp.src_port == 80 or tcp.dest_port == 80 or tcp.dest_port == 443 or tcp.src_port == 443) :
                         print('HTTP Data:')
-                        print (tcp.flag_syn)
+                        print(TAB_2 + 'Flags:')
+                        print(TAB_3 + 'URG: {}, ACK: {}, PSH: {}'.format(tcp.flag_urg, tcp.flag_ack, tcp.flag_psh))
+                        print(TAB_3 + 'RST: {}, SYN: {}, FIN:{}'.format(tcp.flag_rst, tcp.flag_syn, tcp.flag_fin))
                         try:
                             http = HTTP(tcp.data)
                             http_info = str(http.data).split('\n')
