@@ -56,9 +56,9 @@ def main():
                     # HTTP
                     if  (tcp.src_port == 80 or tcp.dest_port == 80 or tcp.dest_port == 443 or tcp.src_port == 443) :
                         print('HTTP Data:')
-                        print(TAB_2 + 'Flags:')
-                        print(TAB_3 + 'URG: {}, ACK: {}, PSH: {}'.format(tcp.flag_urg, tcp.flag_ack, tcp.flag_psh))
-                        print(TAB_3 + 'RST: {}, SYN: {}, FIN:{}'.format(tcp.flag_rst, tcp.flag_syn, tcp.flag_fin))
+                        #print(TAB_2 + 'Flags:')
+                        #print(TAB_3 + 'URG: {}, ACK: {}, PSH: {}'.format(tcp.flag_urg, tcp.flag_ack, tcp.flag_psh))
+                        #print(TAB_3 + 'RST: {}, SYN: {}, FIN:{}'.format(tcp.flag_rst, tcp.flag_syn, tcp.flag_fin))
                         try:
                             http = HTTP(tcp.data)
                             http_info = str(http.data).split('\n')
@@ -74,6 +74,7 @@ def main():
                                 print(DATA_TAB_1 + "Source IP:")
                                 print(DATA_TAB_2 + ipv4.src)
                                 print(DATA_TAB_2 + resolvedSrc)
+                                
                                 print(DATA_TAB_1 + "Destination IP:")
                                 print(DATA_TAB_2 + ipv4.target)
                                 print(DATA_TAB_2 + resolvedDest)
