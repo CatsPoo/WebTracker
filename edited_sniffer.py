@@ -49,7 +49,7 @@ def main():
                 if len(tcp.data) > 0:
 
                     # HTTP
-                    if tcp.src_port == 80 or tcp.dest_port == 80 or tcp.dest_port == 443 or tcp.src_port == 443 :
+                    if tcp.flag_syn and (tcp.src_port == 80 or tcp.dest_port == 80 or tcp.dest_port == 443 or tcp.src_port == 443) :
                         print('HTTP Data:')
 
                         try:
