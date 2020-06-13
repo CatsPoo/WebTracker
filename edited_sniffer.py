@@ -84,7 +84,7 @@ def main():
 
                         except:
                             print(format_multi_line(DATA_TAB_3, tcp.data))
-                    else:
+                    #else:
                         #print(TAB_2 + 'TCP Data:')
                         #print(format_multi_line(DATA_TAB_3, tcp.data))
 
