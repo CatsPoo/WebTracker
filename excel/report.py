@@ -25,6 +25,6 @@ class Report:
 		self.save()
 
 	def save(self):
-		open(("Reports/"+self.current_date+".xls","a")
-        self.wb.save("Reports/"+self.current_date+".xls")
+		open("Reports/"+self.current_date+".xls","a")
+		self.wb.save("Reports/"+self.current_date+".xls")
 
